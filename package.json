@@ -1,0 +1,25 @@
+{
+  "name": "developers-svelte",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "css-tree": "^3.0.0",
+    "npm-force-resolutions": "^0.0.10",
+    "svelte": "^4.2.19",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "svelte-routing": "^2.13.0"
+  },
+  "resolutions": {
+  "css-tree": "3.0.0"
+}
+}
