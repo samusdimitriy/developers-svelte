@@ -46,33 +46,39 @@
   window.addEventListener('scroll', handleScroll);
 
   onMount(() => {
-    const logo = document.getElementById("logo");
-    const logoText = logo.textContent;
-    logo.innerHTML = "";
-    logoText.split("").forEach((char) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      span.style.display = "inline-block";
-      logo.appendChild(span);
-    });
+    if (typeof gsap !== 'undefined') {
+      const logo = document.getElementById("logo");
+      const logoDI = document.getElementById("logo-di");
+      const logoVelopers = document.getElementById("logo-velopers");
 
-    logo.addEventListener("mouseenter", () => {
-      gsap.to("#logo span", {
-        y: -10,
-        duration: 0.3,
-        ease: "power2.out",
-        stagger: 0.05,
+      logo.addEventListener("mouseenter", () => {
+        gsap.to(logoDI, { 
+          scale: 1.1, 
+          duration: 0.3, 
+          ease: "power2.out" 
+        });
+        gsap.to(logoVelopers, { 
+          color: "#CCCCCC", // Slightly lighter color for Velopers part
+          duration: 0.3, 
+          ease: "power2.out" 
+        });
       });
-    });
 
-    logo.addEventListener("mouseleave", () => {
-      gsap.to("#logo span", {
-        y: 0,
-        duration: 0.3,
-        ease: "power2.inOut",
-        stagger: 0.05,
+      logo.addEventListener("mouseleave", () => {
+        gsap.to(logoDI, { 
+          scale: 1.0, 
+          duration: 0.3, 
+          ease: "power2.inOut" 
+        });
+        gsap.to(logoVelopers, { 
+          color: "#FFFFFF", // Original color for Velopers part
+          duration: 0.3, 
+          ease: "power2.inOut" 
+        });
       });
-    });
+    } else {
+      console.error("GSAP not loaded, logo hover animation disabled.");
+    }
   });
 </script>
 
@@ -80,7 +86,7 @@
   class="header {isHeaderTransparent ? 'header--transparent' : ''} {isHeaderVisible ? '' : 'header--hidden'}"
 >
   <div class="container">
-    <a href="/" class="logo" id="logo">DIVelopers</a>
+    <a href="/" class="logo" id="logo"><span id="logo-di" style="font-weight: bold; color: #17A2B8;">DI</span><span id="logo-velopers" style="font-weight: normal; color: #FFFFFF;">Velopers</span></a>
     <button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
       {isMenuOpen ? '✖' : '☰'}
     </button>
@@ -100,7 +106,7 @@
 
 <style>
   .header {
-    background-color: #002642;
+    background-color: #0A2A43;
     position: fixed;
     top: 0;
     left: 0;
@@ -112,7 +118,7 @@
   }
 
   .header--transparent {
-    background-color: rgba(0, 38, 66, 0.9);
+    background-color: rgba(10, 42, 67, 0.9);
   }
 
   .header--hidden {
@@ -158,7 +164,7 @@
     position: absolute;
     top: 60px;
     right: 1rem;
-    background-color: rgba(0, 38, 66, 0.95);
+    background-color: rgba(10, 42, 67, 0.95);
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
@@ -176,7 +182,7 @@
   }
 
   .nav-link:hover {
-    background-color: #00aaff;
+    background-color: #17A2B8;
     color: #ffffff;
     transform: scale(1.05);
   }

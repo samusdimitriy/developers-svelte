@@ -3,19 +3,22 @@
 
     let projects = [
         {
-            title: "Project 1",
-            description: "Description of project 1. A modern website for a small business.",
-            link: "#"
+            title: "E-commerce Platform for Fashion Brand",
+            description: "Developed a full-featured e-commerce website with custom design and payment gateway integration.",
+            link: "#",
+            image: "https://placekitten.com/g/400/300"
         },
         {
-            title: "Project 2",
-            description: "Description of project 2. A portfolio website for a photographer.",
-            link: "#"
+            title: "Portfolio Website for Creative Agency",
+            description: "Designed and built a visually rich portfolio site to showcase their work.",
+            link: "#",
+            image: "https://placekitten.com/g/401/300"
         },
         {
-            title: "Project 3",
-            description: "Description of project 3. An e-commerce website for a clothing store.",
-            link: "#"
+            title: "Corporate Website for Tech Startup",
+            description: "Created a professional and informative website to establish their online presence.",
+            link: "#",
+            image: "https://placekitten.com/g/402/300"
         }
     ];
 
@@ -62,7 +65,7 @@
 <style>
     .portfolio {
         padding: 4rem 2rem;
-        background-color: #002642;
+        background-color: #0A2A43;
         color: #ffffff;
     }
 
@@ -87,7 +90,7 @@
     }
 
     .project-card {
-        background-color: #01334d;
+        background-color: #0E3A5C; /* Lighter shade of new primary */
         padding: 1.5rem;
         border-radius: 1rem;
         transition: transform 0.3s, box-shadow 0.3s;
@@ -116,7 +119,7 @@
         margin: 0.5rem 0;
         font-size: 1.5rem;
         font-family: 'Roboto', sans-serif;
-        color: #00aaff;
+        color: #17A2B8; /* New accent color */
     }
 
     .project-card p {
@@ -129,7 +132,7 @@
     .project-link {
         display: inline-block;
         padding: 0.75rem 1.5rem;
-        background-color: #00aaff;
+        background-color: #17A2B8; /* New accent color */
         color: #ffffff;
         border-radius: 2rem;
         text-decoration: none;
@@ -139,7 +142,7 @@
     }
 
     .project-link:hover {
-        background-color: #0077cc;
+        background-color: #138496; /* Darker shade of new accent */
         transform: scale(1.05);
     }
 

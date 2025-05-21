@@ -1,12 +1,28 @@
+<script>
+    // TODO: Replace '#' with your actual social media profile URLs
+    let socialLinks = [
+        { name: "GitHub", url: "#", iconClass: "fab fa-github" },
+        { name: "LinkedIn", url: "#", iconClass: "fab fa-linkedin-in" },
+        { name: "Twitter", url: "#", iconClass: "fab fa-twitter" }
+    ];
+</script>
+
 <footer class="footer">
     <div class="container">
         <p>&copy; 2024 DIVelopers. All rights reserved.</p>
+        <div class="social-icons">
+            {#each socialLinks as link}
+                <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
+                    {link.name}
+                </a>
+            {/each}
+        </div>
     </div>
 </footer>
 
 <style>
     .footer {
-        background-color: #002642;
+        background-color: #0A2A43;
         color: #ffffff;
         padding: 2rem 0;
         text-align: center;
@@ -37,6 +53,6 @@
     }
 
     .social-icons a:hover {
-        color: #00aaff;
+        color: #17A2B8; /* New accent color */
     }
 </style>

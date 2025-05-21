@@ -2,25 +2,13 @@
     import { onMount } from 'svelte';
 
     let contactInfo = {
-        address: "123 Berlin, Germany",
-        phone: "+49 123 456 7890",
-        email: "info@divelopers.gmail.com"
+        address: "Musterstraße 1, 10115 Berlin, Germany",
+        phone: "+49 30 12345678",
+        email: "contact@divelopers.example.com"
     };
 
-    let form = {
-        name: '',
-        email: '',
-        message: ''
-    };
-
-    function handleSubmit() {
-        alert(`Thank you for your message, ${form.name}!`);
-        form = {
-            name: '',
-            email: '',
-            message: ''
-        };
-    }
+    // The 'form' state variable and 'handleSubmit' function have been removed
+    // as the form submission is now handled by Formspree.
 
     onMount(() => {
         if (typeof gsap !== 'undefined') {
@@ -77,10 +65,23 @@
             <p><strong>Email:</strong> <a href="mailto:{contactInfo.email}">{contactInfo.email}</a></p>
         </div>
 
-        <form class="contact-form" on:submit|preventDefault={handleSubmit}>
-            <input type="text" placeholder="Your name" bind:value={form.name} required />
-            <input type="email" placeholder="Your email" bind:value={form.email} required />
-            <textarea placeholder="Your message" bind:value={form.message} required></textarea>
+        <!-- 
+            IMPORTANT: Formspree Integration Guide
+            1. Create an account on https://formspree.io/
+            2. Create a new form in your Formspree dashboard.
+            3. Replace the placeholder URL below in the 'action' attribute 
+               with your actual Formspree form endpoint URL.
+            4. Configure your form settings in Formspree (e.g., email notifications, 
+               thank you page redirect).
+        -->
+        <form 
+            class="contact-form" 
+            action="https://formspree.io/f/your_form_id" 
+            method="POST"
+        >
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </div>
@@ -89,7 +90,7 @@
 <style>
     .contact {
         padding: 4rem 2rem;
-        background-color: #002642;
+        background-color: #0A2A43;
         color: #ffffff;
     }
 
@@ -117,7 +118,7 @@
     }
 
     .contact-info a {
-        color: #00aaff;
+        color: #17A2B8; /* New accent color */
         text-decoration: none;
     }
 
@@ -140,7 +141,7 @@
         font-size: 1rem;
         border: none;
         border-radius: 2rem;
-        background-color: #01334d;
+        background-color: #0E3A5C; /* Lighter shade of new primary */
         color: #ffffff;
         font-family: 'Roboto', sans-serif;
     }
@@ -158,7 +159,7 @@
     .contact-form button {
         padding: 0.75rem 2rem;
         font-size: 1rem;
-        background-color: #00aaff;
+        background-color: #17A2B8; /* New accent color */
         color: #ffffff;
         border: none;
         border-radius: 2rem;
@@ -168,7 +169,7 @@
     }
 
     .contact-form button:hover {
-        background-color: #0077cc;
+        background-color: #138496; /* Darker shade of new accent */
         transform: scale(1.05);
     }
 

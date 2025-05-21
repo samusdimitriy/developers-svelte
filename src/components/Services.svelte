@@ -3,20 +3,20 @@
 
     let services = [
         {
-            title: "Web Development",
-            description: "Creating fast, responsive, and SEO-friendly websites using modern technologies.",
+            title: "Custom Web Application Development",
+            description: "Building scalable and secure web apps tailored to your unique business needs.",
         },
         {
-            title: "UI/UX Design",
-            description: "Designing user-friendly interfaces and beautiful websites that stand out.",
+            title: "Modern UI/UX Design",
+            description: "Creating intuitive and visually stunning user interfaces that enhance user engagement.",
         },
         {
-            title: "Mobile Development",
-            description: "Developing cross-platform mobile applications for iOS and Android.",
+            title: "E-commerce Solutions",
+            description: "Developing robust e-commerce platforms that drive sales and growth.",
         },
         {
-            title: "Support & Maintenance",
-            description: "Providing ongoing support and maintenance for your website or application.",
+            title: "Mobile-First Responsive Design",
+            description: "Ensuring your website looks and performs flawlessly on all devices.",
         }
     ];
 
@@ -60,7 +60,7 @@
 <style>
     .services {
         padding: 4rem 2rem;
-        background-color: #002642;
+        background-color: #0A2A43;
         color: #ffffff;
     }
 
@@ -85,7 +85,7 @@
     }
 
     .service-card {
-        background-color: #01334d;
+        background-color: #0E3A5C; /* Lighter shade of new primary */
         padding: 2rem;
         border-radius: 1rem;
         transition: transform 0.3s, box-shadow 0.3s;
@@ -100,7 +100,7 @@
         font-size: 1.75rem;
         margin-bottom: 1rem;
         font-family: 'Roboto', sans-serif;
-        color: #00aaff;
+        color: #17A2B8; /* New accent color */
     }
 
     .service-card p {

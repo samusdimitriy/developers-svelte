@@ -6,13 +6,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background: #002642;
-  color: #333;
+  background: #0A2A43;
+  color: #FFFFFF; /* Changed default text color to white for better contrast on dark background */
   line-height: 1.6;
 }
 
 a {
-  color: #ff3e00;
+  color: #17A2B8; /* Changed link color to new accent */
   text-decoration: none;
 }
 
@@ -21,7 +21,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #2c3e50;
+  color: #FFFFFF; /* Changed heading color to white */
   margin-top: 0;
 }
 
@@ -34,7 +34,7 @@ p {
 }
 
 button {
-  background-color: #ff3e00;
+  background-color: #17A2B8; /* Changed button background to new accent */
   border: none;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -44,5 +44,5 @@ button {
 }
 
 button:hover {
-  background-color: #d83600;
+  background-color: #138496; /* Darker shade of accent for hover */
 }

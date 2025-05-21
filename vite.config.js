@@ -10,4 +10,9 @@ export default defineConfig({
     build: {
         outDir: 'dist', // Папка для сборки проекта
     },
+    test: {
+        globals: true,
+        environment: 'happy-dom',
+        setupFiles: './src/setupTests.js'
+    }
 });

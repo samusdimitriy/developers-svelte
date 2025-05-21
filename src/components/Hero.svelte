@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
 
-    export let title = "We provide the best solutions for your business";
+    export let title = "Innovative Web Solutions by DIVelopers";
 
     onMount(() => {
         if (typeof gsap !== 'undefined') {
@@ -13,21 +13,31 @@
 
             titleElement.innerHTML = titleElement.textContent.split('').map(letter => `<span class="letter">${letter}</span>`).join('');
 
-            gsap.from(".letter", {
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".hero",
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                },
+                    start: "top 80%", // Start when 80% of the hero section is in view
+                    toggleActions: "play none none none" // Play once when triggered
+                }
+            });
+
+            tl.from(".letter", {
                 duration: 1,
                 opacity: 0,
                 y: 50,
                 stagger: 0.05,
                 ease: "power3.out"
-            });
+            })
+            .from(".arrow", { // Animate arrows after title
+                duration: 0.8,
+                opacity: 0,
+                y: 20, // Slight upward movement
+                stagger: 0.3, // Stagger the appearance of multiple arrows
+                ease: "power2.out"
+            }, "-=0.5"); // Start this animation 0.5s before the previous one ends for overlap
 
         } else {
-            console.error("GSAP не загружен.");
+            console.error("GSAP not loaded, Hero animations disabled.");
         }
     });
 </script>
@@ -41,7 +51,7 @@
 
 <style>
     .hero {
-        background-color: #002642;
+        background-color: #0A2A43;
         text-align: center;
         position: relative;
         min-height: calc(100vh - 60px);
