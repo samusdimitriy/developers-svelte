@@ -8,6 +8,10 @@
     import Portfolio from './components/Portfolio.svelte';
     import Contact from './components/Contact.svelte';
 
+    import ProjectAlpha from './components/ProjectAlpha.svelte';
+    import ProjectBeta from './components/ProjectBeta.svelte';
+    import ProjectGamma from './components/ProjectGamma.svelte';
+
     let showIntro = true;
 
     function handleIntroComplete() {
@@ -37,6 +41,18 @@
 
         <section id="contact">
             <Contact />
+        </section>
+
+        <section id="project-alpha">
+            <ProjectAlpha />
+        </section>
+
+        <section id="project-beta">
+            <ProjectBeta />
+        </section>
+
+        <section id="project-gamma">
+            <ProjectGamma />
         </section>
     </main>
 

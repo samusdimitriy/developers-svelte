@@ -4,6 +4,9 @@
   let links = [
     { name: "Services", href: "#services" },
     { name: "Works", href: "#portfolio" },
+    { name: "Project Alpha", href: "#project-alpha" },
+    { name: "Project Beta", href: "#project-beta" },
+    { name: "Project Gamma", href: "#project-gamma" },
     { name: "Contact", href: "#contact" }
   ];
 
